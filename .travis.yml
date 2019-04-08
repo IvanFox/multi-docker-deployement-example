@@ -21,16 +21,15 @@ after_success:
   - docker push ivanfox/ngnix
   - docker push ivanfox/server
 
-  
-  deploy:
-    provider: elasticbeanstalk
-    region: eu-west-1
-    app: comlex-fib
-    env: ComplexFib-env
-    bucket_name: elasticbeanstalk-eu-west-1-005590710551
-    bucket_path: comlex-fib
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key:
-      secure: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: eu-west-1
+  app: complex-fib
+  env: ComplexFib-env
+  bucket_name: elasticbeanstalk-eu-west-1-005590710551
+  bucket_path: complex-fib
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
